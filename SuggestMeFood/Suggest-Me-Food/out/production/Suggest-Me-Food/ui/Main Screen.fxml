@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane prefHeight="895.0" prefWidth="753.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainScreenController">
+   <children>
+      <Pane layoutX="12.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#mouseDraggedRoot" onMousePressed="#mousePressedRoot" prefHeight="870.0" prefWidth="730.0" style="-fx-background-color: #b29e7e; -fx-background-radius: 25 25 25 25;">
+         <children>
+            <SplitPane dividerPositions="0.38" layoutX="14.0" layoutY="259.0" prefHeight="597.0" prefWidth="702.0">
+              <items>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TreeView fx:id="treeView" prefHeight="625.0" prefWidth="263.0" showRoot="false" stylesheets="@Design.css" />
+                        <Button mnemonicParsing="false" onAction="#launchCalculator" prefHeight="25.0" prefWidth="530.0" text="Macronutrient Calculator" />
+                     </children>
+                  </VBox>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                    <content>
+                      <AnchorPane fx:id="recipesAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="339.0" />
+                    </content>
+                  </ScrollPane>
+              </items>
+            </SplitPane>
+            <TextField fx:id="searchBar" layoutX="14.0" layoutY="205.0" onKeyPressed="#keyPressedSearch" onMouseClicked="#mouseClickedSearch" prefHeight="42.0" prefWidth="702.0" promptText="Search For Recipes" style="-fx-background-radius: 25 25 25 25; -fx-background-image: url(http://downloadicons.net/sites/default/files/magnifying-glass-icon-45657.png); -fx-background-repeat: no-repeat; -fx-background-position: 98% 50%;" />
+            <ImageView fitHeight="163.0" layoutX="214.0" layoutY="36.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../assets/Header%20Image.png" />
+               </image>
+            </ImageView>
+            <Pane fx:id="close" layoutX="602.0" layoutY="-72.0" onMouseClicked="#close" onMouseEntered="#mouseEnteredX" onMouseExited="#mouseExitedX" prefHeight="200.0" prefWidth="200.0" rotate="45.0" scaleX="0.1" scaleY="0.1" scaleZ="0.1">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#545657" height="25.0" layoutX="20.0" layoutY="88.0" mouseTransparent="true" rotate="90.0" stroke="#ffffff00" strokeType="INSIDE" width="161.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#545657" height="25.0" layoutX="20.0" layoutY="88.0" mouseTransparent="true" stroke="#ffffff00" strokeType="INSIDE" width="161.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="minimize" layoutX="571.0" layoutY="-72.0" onMouseClicked="#minimize" onMouseEntered="#mouseEnteredMinimize" onMouseExited="#mouseExitedMinimize" prefHeight="200.0" prefWidth="200.0" scaleX="0.1" scaleY="0.08" scaleZ="0.1">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#46484a" height="28.0" layoutX="25.0" layoutY="120.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="150.0" />
+               </children>
+            </Pane>
+            <ProgressBar fx:id="progressBar" layoutX="400.0" layoutY="475.0" prefWidth="200.0" progress="0.0" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+   </children>
+</Pane>
